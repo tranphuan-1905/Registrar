@@ -21,4 +21,29 @@ public class Course{
     public void setInttructor(Instructor instructor){
         this.instructor= instructor;
     }
+
+    // Task 3: Complete
+    public Student search(String id) {
+        for (Student student : students) {
+            if (student.getID().equals(id)) {
+                return student;
+            }
+        }
+        return null;
+    }
+
+    // Task 4: Complete
+    public void add(Student student) throws Exception {
+        if (students.size() >= max) {
+            throw new Exception("This course full students");
+        }
+
+        if (search(student.getID()) != null) {
+            throw new Exception("This student existed");
+        }
+
+        students.add(student);
+    }
+
+    
 }
