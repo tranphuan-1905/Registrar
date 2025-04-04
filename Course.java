@@ -1,37 +1,24 @@
+import java.util.ArrayList;
+
 public class Course{
     private String name;
     private String code;
-    private static final int MAX_STUDENT =35;
+    private int max;
     private Instructor instructor;
     private ArrayList<Student> students = new ArrayList<>();
 
-    public Course(String name, String code, Instructor instructors){
+    // Task 1: Complete
+    public Course(String name, String code, int max){
         this.name = name;
         this.code = code;
-        this.Instructor= instructors;
+        this.max = max;
     }
-    public String getName(){
-        return name;
-    }
-    public String getCode(){
-        return code;
-    }
+
+    // Task 2: Complete
     public Instructor getInstructor(){
         return instructor;
     }
     public void setInttructor(Instructor instructor){
         this.instructor= instructor;
-    }
-    public int getNumberofStudent(){
-        return students.size();
-    }
-    public boolean addStudent(Student student){
-        if (students.size() < MAX_STUDENT){
-            student.add(student);
-            return true;
-        }else{
-            System.out.println("Cannot add student. Course is full.");
-            return false;
-        }
     }
 }
